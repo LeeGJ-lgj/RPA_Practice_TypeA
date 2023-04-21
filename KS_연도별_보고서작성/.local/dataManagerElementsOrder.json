@@ -1,0 +1,254 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Dic_Config&Flowchart_1",
+        "Str_ID&Flowchart_1",
+        "Str_PW&Flowchart_1",
+        "Str_ACME_URL&Flowchart_1",
+        "Str_ACME_WI&Flowchart_1",
+        "DT_Extract&Flowchart_1",
+        "DT_VendorExcel&Flowchart_1",
+        "Str_TaxID&Flowchart_1",
+        "Str_Name&Flowchart_1",
+        "Str_Address&Flowchart_1",
+        "Str_City&Flowchart_1",
+        "Str_TaxID_Folder&Flowchart_1",
+        "Str_YearlyReportFile&Flowchart_1",
+        "Str_UploadID&Flowchart_1",
+        "Int_Count&Flowchart_1",
+        "Str_ResultFileName&Flowchart_1",
+        "Str_SheetName&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "000_Process_Common/Get_WindowsCredential.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_Str_Target",
+        "out_Str_Username",
+        "out_Str_Password"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "000_Process_Common/Get_OrchestratorCredential.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_Str_OchestratorFolderPath",
+        "in_StrCredentialName",
+        "out_Str_ID",
+        "out_Str_PW"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_Str_SiteURL",
+        "in_Str_SiteID",
+        "in_Str_SitePW"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_NavigateTo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_ExtractDataTable.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_Extract&Filter_DataTable.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "200_Process_DT/201_Build_New_DataTable.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "000_Process_Common/Read_Config.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_Str_ConfigPath",
+        "out_Dic_Config",
+        "in_AryStr_ConfigSheets"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_NavigateTo_WIDetails.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_ACME_URL",
+        "in_WIID"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_Extract_Vendor.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "out_Str_City",
+        "out_Str_Address",
+        "out_Str_Name",
+        "out_Str_TaxID"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_NavigateTo_Monthly_Report.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_Download_Monthly_Report.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "out_Str_TaxID_Folder",
+        "in_Str_Year",
+        "in_Str_TaxID",
+        "in_Dic_Config"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_NavigateTo_Dashboard.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_NavigateTo_UploadYearlyReport.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "300_Process_Excel/301_Excel_CreateYearlyReport.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "out_Str_YearlyReportFile",
+        "in_Str_Year",
+        "in_Str_TaxID",
+        "in_DT_Config",
+        "in_Str_TaxIDFolder"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_Upload_YearlyReport.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "out_Str_UploadID",
+        "in_Str_YearlyReportFile",
+        "in_Str_Year",
+        "in_Str_TaxID"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_Update_WorkItem_Detail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "300_Process_Excel/302_Save_TotalExcel.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": [
+        "in_Dic_Config",
+        "in_DT_VendorExcel",
+        "in_Str_ResultName",
+        "in_Str_ResultExcel",
+        "in_Str_TemplateExcel",
+        "in_Str_SheetName"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "000_Process_Common/Delete_SourceData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_Close.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "100_Process_ACME/ACME_Close_UpdateBrowser.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    }
+  ]
+}
