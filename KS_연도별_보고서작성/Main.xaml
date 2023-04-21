@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="733.6,966.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="733.6,966.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="30">
+    <scg:List x:TypeArguments="x:String" Capacity="60">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -31,6 +31,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Security</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -86,6 +87,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap:VirtualizedContainerService.HintSize="744,901.6" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -107,6 +109,8 @@
       <Variable x:TypeArguments="x:Int32" Default="0" Name="Int_Count" />
       <Variable x:TypeArguments="x:String" Name="Str_ResultFileName" />
       <Variable x:TypeArguments="x:String" Name="Str_SheetName" />
+      <Variable x:TypeArguments="x:String" Name="Str_Naver_ID" />
+      <Variable x:TypeArguments="ss:SecureString" Name="Str_Naver_PW" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -119,9 +123,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID5">
+    <FlowStep x:Name="__ReferenceID6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">0,68.39999999999999</av:Point>
@@ -322,6 +326,7 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_Extract]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="529.6,2568.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
@@ -461,9 +466,10 @@
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">380,578.4</av:Point>
                               <av:Size x:Key="ShapeSize">200,83.2</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">480,661.6 560,661.6 560,678.4</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Step6 최종 엑셀 저장" sap:VirtualizedContainerService.HintSize="449.6,356" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <Sequence DisplayName="Step6 최종 엑셀 저장" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -481,6 +487,77 @@
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                           </Sequence>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID5">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">459.99999999999994,678.4</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,83.2</av:Size>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Sequence DisplayName="Step7 결과 보고 및 발송" sap:VirtualizedContainerService.HintSize="449.6,499.20000000000005" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="- OrchestratorCredential의 Password를 비공개, 보안된 SecureString 사용&#xA;&#xA;- Naver 계정(Mail SMTP사용)" DisplayName="000_Process_Common\Get_OrchestratorCredential_SecureString.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="000_Process_Common\Get_OrchestratorCredential_SecureString.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Str_OrchestratorFolderPath">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Dic_Config(&quot;Ochestrator_Naver&quot;).ToString" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Str_CredentialName">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Dic_Config(&quot;Email_Account&quot;).ToString" />
+                                    </InArgument>
+                                    <OutArgument x:TypeArguments="x:String" x:Key="out_Str_ID">
+                                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_Naver_ID" />
+                                    </OutArgument>
+                                    <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Str_PW">
+                                      <VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="Str_Naver_PW" />
+                                    </OutArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:InvokeWorkflowFile>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="- 최종 정리된 Result파일을 첨부하여 담당자에게 메일로 전송한다." DisplayName="400_Process_Mail\401_Mail_Result_Send.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="400_Process_Mail\401_Mail_Result_Send.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Str_Manager">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Dic_Config(&quot;To&quot;).ToString" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Str_Title">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Dic_Config(&quot;Title&quot;).ToString.Replace(&quot;{이름}&quot;,Dic_Config(&quot;Manager&quot;).ToString)" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Str_Content">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Dic_Config(&quot;Body&quot;).ToString.Replace(&quot;{Year}&quot;,Dic_Config(&quot;Year&quot;).ToString)" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Str_Server">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Dic_Config(&quot;SMTP 서버명&quot;).ToString" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Str_Port">
+                                      <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="CInt(Dic_Config(&quot;SMTP 포트&quot;))" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Str_SendID">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_Naver_ID" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="ss:SecureString" x:Key="in_Str_SendPW">
+                                      <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Str_Naver_PW" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Str_ResultReportFile">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Dic_Config(&quot;Result&quot;).ToString+&quot;\&quot;+Str_ResultFileName+Dic_Config(&quot;xlsx&quot;).ToString" />
+                                    </InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:InvokeWorkflowFile>
+                              </Sequence>
+                            </FlowStep>
+                          </FlowStep.Next>
                         </FlowStep>
                       </FlowStep.Next>
                     </FlowStep>
@@ -497,5 +574,6 @@
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
   </Flowchart>
 </Activity>
